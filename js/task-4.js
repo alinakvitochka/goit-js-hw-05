@@ -1,12 +1,5 @@
 const getTotalBalanceByGender=(users, gender)=>{
-let filltered = users.filter((user)=>{return user.gender===gender});
-let total = 0;
-
-  for (const user of filltered) {
-    total += user.balance;
-  }
-
-  return total ;
+return users.filter((user)=>{return user.gender===gender}).reduce((total, user) => total + user.balance, 0);
 }
 
 
